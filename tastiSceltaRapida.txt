@@ -1,0 +1,8 @@
+Ctrl+Shift+F = per cercare qualcosa in particolare
+Maiusc + Alt + F = per identare
+Node name.js = per eseguire il file
+
+color : crimson
+colore oro : #faf1a3
+
+const header = document.querySelector('.header.container');
