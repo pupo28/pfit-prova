@@ -6,3 +6,18 @@ color : crimson
 colore oro : #faf1a3
 
 const header = document.querySelector('.header.container');
+
+(async () => {
+    await stampaEsercizioConSerie(eserciziSceltiGruppomuscolare, seriePerEsercizio);
+})();
+
+pesiCorpoLiberoString, 
+obiettivoString, 
+intensitaString, 
+genereString, 
+perditaGrassoString,
+frequenzaAllenamentoString, 
+areaPiuSviluppataString, 
+primoGruppoMenoSviluppatoString,
+secondoGruppoMenoSviluppatoString;
+
