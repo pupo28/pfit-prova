@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styleCheckout.css">
+
+  <title>Checkout</title>
+</head>
+
+<body>
+  <section id="header">
+    <div class="header container">
+      <div class="nav-bar">
+        <div class="brand">
+          <a href="index.html#hero">
+            <img src="img/logo.png">
+          </a>
+        </div>
+        <div class="nav-list">
+          <div class="hamburger">
+            <div class="bar"></div>
+          </div>
+          <ul class="menu-list">
+            <li><a href="index.html#hero" data-after="Home">Home</a></li>
+            <li><a href="index.html#services" data-after="Service">Services</a></li>
+            <li><a href="index.html#projects" data-after="Projects">Projects</a></li>
+            <li><a href="index.html#about" data-after="About">About</a></li>
+            <li><a href="index.html#contact" data-after="Contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="all-no-headerFooter">
+    <div id="form-container">
+      <h1>Checkout</h1>
+
+      <div class="form-group">
+        <input type="text" id="first-name" name="first-name" required oninput="capitalizeFirstLetter(this)">
+        <label for="first-name">Nome</label>
+        <span id="first-name-error" class="error-message">Campo obbligatorio</span>
+      </div>
+
+      <br>
+
+      <div class="form-group">
+        <input type="text" id="last-name" name="last-name" required oninput="capitalizeFirstLetter(this)">
+        <label for="last-name">Cognome</label>
+        <span id="last-name-error" class="error-message">Campo obbligatorio</span>
+      </div>
+
+      <br>
+
+      <div class="form-group">
+        <input type="email" id="email" name="email" required>
+        <label for="email">Email</label>
+        <span id="email-error" class="error-message">Campo obbligatorio</span>
+        <span id="email-error-2" class="error-message" style="display: none;">Email non valida</span>
+      </div>
+
+      <span class="notice">*L'indirizzo email deve essere valido in quanto verrà utilizzato per inviare la chiave di
+        sblocco.</span>
+
+    </div>
+
+    <div id="product-info" class="product-info">
+      <div id="product-info-img-title">
+        <div id="product-details">
+          <img src="img/3d-box.png" alt="Nome del prodotto">
+          <p>CUSTOMIZED PFIT (key per sbloccare scheda di allenamento personalizzata)</p>
+        </div>
+      </div>
+      <div id="product-info-price-quantity">
+        <div id="price-quantity">
+          <div id="quantity">
+            <button onclick="decrementQuantity()">-</button>
+            <span id="product-quantity">1</span>
+            <button onclick="incrementQuantity()">+</button>
+            <p id="product-price">Prezzo: <span id="price-value"></span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <br>
+      <input type="text" id="codice-sconto" name="codice-sconto" required oninput="convertToUppercase(this)">
+      <label for="codice-sconto" id="codice-sconto-label">Codice sconto</label>
+      <button type="button" id="verifica-codice">USA CODICE</button>
+      <p class="messaggio-codice-sconto" id="messaggio-codice-sconto"></p>
+      <span class="remove-icon" id="remove-icon-element" style="display: none;">x</span>
+      <span class="warning-icon" id="warning-icon-element" style="display: none;">!</span>
+      <p class="messaggio-quanto-sconto" id="messaggio-quanto-sconto"></p>
+    </div>
+
+    <div id="paypal-button-container"></div>
+  </div>
+
+  <script
+    src="https://www.paypal.com/sdk/js?client-id=AZOcICgHME-ebXQ9HHHxT7p8C9NdPBX1cYBNOxg44odO-Fnr_zfvJsBkSMn7w6TAlRQfCRu0MAtthiQ_"></script>
+
+  <script>
+function inviaCouponAlServer(couponValue) {
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbzsBBwXYHzOgKvvQQKtJTNChwUQgkEUhvW9h-En--C_yBg3OSB7PKvdg89jyLx6aZ70/exec';
+
+  // Creare un oggetto FormData con il valore del coupon
+  const formData = new FormData();
+  formData.append('Coupon', couponValue);
+
+  // Effettuare la richiesta POST
+  fetch(scriptURL, { method: 'POST', body: formData })
+    .then(response => console.log('Success!', response))
+    .catch(error => console.error('Error!', error.message));
+}
+
+// Esempio di chiamata alla funzione per inviare il coupon
+const couponValue = 'VALORE_DEL_COUPON'; // Sostituire con il valore effettivo del coupon
+inviaCouponAlServer(couponValue);
+
+    // Gestione codice sconto
+    var productPrice = 19.99; // Prezzo iniziale del prodotto    
+    var codiceScontoVero = "PFIT28"; // Codice sconto
+    const percentualeSconto = 20; // Percentuale dello sconto
+    let productPriceForX = productPrice;
+    var quantoSconto = 0;
+    var messaggioCodiceSconto = document.getElementById("messaggio-codice-sconto");
+    var messaggioQuantoSconto = document.getElementById("messaggio-quanto-sconto");
+    var removeIconElement = document.getElementById("remove-icon-element");
+    var warningIconElement = document.getElementById("warning-icon-element");
+    function calcolaSconto(productPrice, percentualeSconto) {
+      if (percentualeSconto >= 0 && percentualeSconto <= 100) {
+        const sconto = (productPrice * percentualeSconto) / 100;
+        productPrice -= sconto;
+        productPrice = Math.round(productPrice * 100) / 100;
+      } else {
+        console.error("La percentuale di sconto non è valida.");
+      }
+      return productPrice;
+    }
+    function updatePrice() {
+      var priceElement = document.getElementById("price-value");
+      if (priceElement) {
+        priceElement.textContent = "$" + productPrice.toFixed(2);
+      }
+    }
+    function updateMessageStyle() {
+      if (window.innerWidth > 1200) {
+        messaggioCodiceSconto.style.top = "calc(100% + 397px)";
+      } else {
+        messaggioCodiceSconto.style.top = "";
+      }
+    }
+    window.addEventListener("resize", updateMessageStyle);
+    updateMessageStyle();
+    document.getElementById("verifica-codice").addEventListener('click', () => {
+      var codiceScontoInserito = document.getElementById("codice-sconto").value;
+      var codiceScontoInput = document.getElementById("codice-sconto");
+      messaggioCodiceSconto.style.display = "block";
+      messaggioQuantoSconto.style.display = "block";
+      if (codiceScontoInserito !== "") {
+        if (codiceScontoInserito === codiceScontoVero) {
+          messaggioCodiceSconto.textContent = "Codice sconto '" + codiceScontoInserito + "' inserito!";
+          messaggioCodiceSconto.style.top = "";
+          messaggioCodiceSconto.style.color = "green";
+          messaggioQuantoSconto.style.color = "green";
+          if (removeIconElement.style.display === "none") {
+            productPrice = calcolaSconto(productPrice, percentualeSconto);
+            updatePrice();
+            quantoSconto = (productPriceForX - productPrice).toFixed(2);
+          }
+          messaggioQuantoSconto.textContent = "Grazie allo sconto del " + percentualeSconto + "%, hai risparmiato " + quantoSconto + "$ sul prezzo originale.";
+          console.log("Prezzo finale: " + productPrice);
+          removeIconElement.style.display = "block";
+          warningIconElement.style.display = "none";
+        } else {
+
+          messaggioCodiceSconto.textContent = "Codice sconto '" + codiceScontoInserito + "' non valido!";
+          messaggioCodiceSconto.style.color = "red";
+          messaggioQuantoSconto.style.display = "none";
+          removeIconElement.style.display = "none";
+          warningIconElement.style.display = "block";
+        }
+        codiceScontoInput.value = "";
+      }
+      if (messaggioCodiceSconto.style.color === "red" || messaggioCodiceSconto.style.display === "none") {
+        productPrice = productPriceForX;
+        updatePrice();
+      }
+    });
+    var removeIconElement = document.getElementById("remove-icon-element");
+    removeIconElement.addEventListener('click', () => {
+      messaggioCodiceSconto.style.display = "none";
+      messaggioQuantoSconto.style.display = "none";
+      removeIconElement.style.display = "none";
+      productPrice = productPriceForX;
+      updatePrice();
+    });
+    // Gestione prezzo
+    var productQuantity = 1;
+    var dynamicPrice = productPrice;
+    function decrementQuantity() {
+      if (productQuantity > 1) {
+        productQuantity--;
+        document.getElementById('product-quantity').textContent = productQuantity;
+        updatePrice();
+      }
+    }
+    function incrementQuantity() {
+      productQuantity++;
+      document.getElementById('product-quantity').textContent = productQuantity;
+      updatePrice();
+    }
+    function updatePrice() {
+      var totalPrice = (productPrice * productQuantity).toFixed(2);
+      document.getElementById('product-price').textContent = 'Prezzo: $' + totalPrice;
+      dynamicPrice = totalPrice;
+    }
+    updatePrice();
+    
+    // paypal code.js
+    paypal.Buttons({
+      createOrder: function (data, actions) {
+        var firstName = document.getElementById('first-name').value;
+        var lastName = document.getElementById('last-name').value;
+        var email = document.getElementById('email').value;
+
+        return actions.order.create({
+          purchase_units: [{
+            amount: {
+              value: dynamicPrice
+            },
+          }]
+        });
+      },
+      onApprove: function (data, actions) {
+        return actions.order.capture().then(function (details) {
+          alert('Pagamento completato con successo!');
+        });
+      }
+    }).render('#paypal-button-container');
+  </script>
+  <script src="checkout.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>

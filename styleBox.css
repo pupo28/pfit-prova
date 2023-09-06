@@ -1,16 +1,14 @@
 @import 'https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700&display=swap';
-body {
-  background-image: url('img/sfondoHome.jpg');
-  background-size: cover; /* Adatta l'immagine allo schermo, mantenendo l'aspetto */
-  background-repeat: no-repeat; /* Evita la ripetizione dell'immagine */
-  background-attachment: fixed; /* Fissa l'immagine allo sfondo */
-}
 
 html {
     font-size: 10px;
 	font-family: 'Montserrat', sans-serif;
 	scroll-behavior: smooth;
 	font-weight: bold;
+	background-image: url(./img/sfondoHome.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top center;
 }
 
 /* Header section */
@@ -112,6 +110,7 @@ html {
 
 #header .nav-list ul.active {
 	left: 0%;
+    top: -10%;
 }
 
 #header .nav-list ul a {
@@ -300,6 +299,10 @@ html {
 		display: inline-block;
 	}
 
+	#header .nav-list ul {
+		background-color: transparent !important;
+	}
+
 	#header .nav-list ul li a {
 		font-size: 1.8rem;
 	}
@@ -312,17 +315,17 @@ html {
 
 .form-container {
     position: relative;
-    top: -500px; /* Posizione fuori schermo sotto */
+    top: -500px; 
     opacity: 1;
-    animation: bounceInUp 1s ease-out forwards; /* Applica l'animazione */
+    animation: bounceInUp 1s ease-out forwards; 
 }
 
 @keyframes bounceInUp {
     0% {
-        transform: translateY(-500px); /* Posizione iniziale fuori schermo */
+        transform: translateY(-500px); 
     }
     100% {
-        transform: translateY(500px); /* Posizione finale */
+        transform: translateY(500px); 
     }
 }
 
@@ -356,7 +359,7 @@ html {
   font-weight: bold;
 }
 
-.reportDetailsDown, .reportTrainingProgramDown, .reportTrainingProgramDownTwo {
+.reportDetailsDown, .reportTrainingProgramDown, .reportTrainingProgramDownSplit, .reportTrainingProgramDownThree {
   color: #ffffff;
   font-family: Arial, sans-serif;
   font-weight: bold;
@@ -427,13 +430,13 @@ select:focus {
   display: flex;
   justify-content: flex-end;
   transition: transform 0.3s, box-shadow 0.3s;
-  outline: none; /* Rimuove l'outline */
-  border: 0.5px solid #000000; /* Personalizza il colore del bordo */
+  outline: none; 
+  border: 0.5px solid #000000; 
 }
 
 #nextButton:hover, #backButton:hover, #submitButton:hover, #submitFinalButton:hover {
-  transform: scale(1.1); /* Ingrandisce il pulsante del 10% */
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Aggiunge un'ombra sottolineata */
+  transform: scale(1.1); 
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); 
   border-color: #000000;
 }
 
@@ -506,5 +509,16 @@ select:focus {
     transform: translateX(0);
   }
 }
+
+.hidden {
+	visibility: hidden;
+	height: 0;
+	margin: 0;
+	padding: 0;
+  }
+ 
+
+
+
 
 

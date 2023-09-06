@@ -4,178 +4,186 @@
 <head>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="styleBox.css">
+    <link rel="stylesheet" href="styleFooter.css">
     <title>Scheda di allenamento</title>
 </head>
 
 <body>
-<section id="header">
-    <div class="header container">
-      <div class="nav-bar">
-        <div class="brand">
-          <a href="index.html#hero">
-            <img src="img/logo.png">
-          </a>
+    <div id="body" class="body">
+        <section id="header">
+            <div class="header container">
+                <div class="nav-bar">
+                    <div class="brand">
+                        <a href="index.html#hero">
+                            <img src="img/logo.png">
+                        </a>
+                    </div>
+                    <div class="nav-list">
+                        <div class="hamburger">
+                            <div class="bar"></div>
+                        </div>
+                        <ul>
+                            <li><a href="index.html#hero" data-after="Home">Home</a></li>
+                            <li><a href="index.html#services" data-after="Service">Services</a></li>
+                            <li><a href="index.html#projects" data-after="Projects">Projects</a></li>
+                            <li><a href="index.html#about" data-after="About">About</a></li>
+                            <li><a href="index.html#contact" data-after="Contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="container" class="form-container">
+            <h1>Configurazione scheda di allenamento</h1>
+            <form id="trainingForm">
+
+                <div class="question">
+                    <label for="obiettivo">Qual è il tuo obiettivo specifico di allenamento?</label>
+                    <select name="obiettivo" id="obiettivo">
+                        <option value="" disabled selected>Seleziona una risposta</option>
+                        <option value="1">Aumento della massa muscolare</option>
+                        <option value="2">Aumento della forza</option>
+                        <option value="3">Entrambi</option>
+                    </select>
+                </div>
+
+                <div class="question">
+                    <label for="intensita">Come valuteresti il tuo livello di esperienza?</label>
+                    <select name="intensita" id="intensita">
+                        <option value="" disabled selected>Seleziona una risposta</option>
+                        <option value="1">Principiante</option>
+                        <option value="2">Intermedio</option>
+                        <option value="3">Avanzato</option>
+                    </select>
+                </div>
+
+                <div class="question">
+                    <label for="genere">Indica il tuo genere:</label>
+                    <select name="genere" id="genere">
+                        <option value="" disabled selected>Seleziona una risposta</option>
+                        <option value="1">Uomo</option>
+                        <option value="2">Donna</option>
+                    </select>
+                </div>
+
+                <div class="question">
+                    <label for="perditaGrasso">Hai come obiettivo la perdita di grasso?</label>
+                    <select name="perditaGrasso" id="perditaGrasso">
+                        <option value="" disabled selected>Seleziona una risposta</option>
+                        <option value="1">Sì</option>
+                        <option value="2">No</option>
+                    </select>
+                </div>
+
+                <div class="question">
+                    <label for="pesiCorpoLibero">Preferisci allenarti con pesi o corpo libero?</label>
+                    <select name="pesiCorpoLibero" id="pesiCorpoLibero">
+                        <option value="" disabled selected>Seleziona una risposta</option>
+                        <option value="1">Pesi</option>
+                        <option value="2">Corpo libero</option>
+                    </select>
+                </div>
+
+                <div class="question">
+                    <label for="frequenzaAllenamento">Quante volte a settimana prevedi di allenarti?</label>
+                    <select name="frequenzaAllenamento" id="frequenzaAllenamento">
+                        <option value="" disabled selected>Seleziona una risposta</option>
+                        <option value="2">2 volte</option>
+                        <option value="3">3 volte</option>
+                        <option value="4">4 volte</option>
+                        <option value="5">5 volte</option>
+                        <option value="6">6 volte</option>
+                    </select>
+                </div>
+
+                <div class="question" id="focaliContainer1" style="display: none;">
+                    <label for="areaPiuSviluppata">Qual è il tuo gruppo muscolare dominante?</label>
+                    <select name="areaPiuSviluppata" id="areaPiuSviluppata">
+                        <option value="" disabled selected>Seleziona una risposta</option>
+                        <option value="1">Petto</option>
+                        <option value="2">Schiena</option>
+                        <option value="3">Spalle</option>
+                        <option value="4">Gambe</option>
+                        <option value="5">Glutei</option>
+                        <option value="6">Bicipiti</option>
+                        <option value="7">Tricipiti</option>
+                        <option value="8">Addome</option>
+                        <option value="9">Polpacci</option>
+
+                    </select>
+                </div>
+
+                <div class="question" id="focaliContainer2" style="display: none;">
+                    <label for="primoGruppoMenoSviluppato">Quale gruppo muscolare vorresti focalizzare
+                        maggiormente?</label>
+                    <select name="primoGruppoMenoSviluppato" id="primoGruppoMenoSviluppato">
+                        <option value="" disabled selected>Seleziona una risposta</option>
+                        <option value="1">Petto</option>
+                        <option value="2">Schiena</option>
+                        <option value="3">Spalle</option>
+                        <option value="4">Gambe</option>
+                        <option value="5">Glutei</option>
+                        <option value="6">Bicipiti</option>
+                        <option value="7">Tricipiti</option>
+                        <option value="8">Addome</option>
+                        <option value="9">Polpacci</option>
+
+                    </select>
+                </div>
+
+                <div class="question" id="sceltaSecondoGruppoID">
+                    <label for="sceltaSecondoGruppo">Desideri focalizzarti su un altro gruppo muscolare?</label>
+                    <select name="sceltaSecondoGruppo" id="sceltaSecondoGruppo">
+                        <option value="" disabled selected>Seleziona una risposta</option>
+                        <option value="1">Si</option>
+                        <option value="2">No</option>
+                    </select>
+                </div>
+
+                <div class="question" id="focaliContainer3" style="display: none;">
+                    <label for="secondoGruppoMenoSviluppato">Quale è il secondo gruppo muscolare che vorresti
+                        focalizzare
+                        maggiormente?</label>
+                    <select name="secondoGruppoMenoSviluppato" id="secondoGruppoMenoSviluppato">
+                        <option value="" disabled selected>Seleziona una risposta</option>
+                        <option value="1">Petto</option>
+                        <option value="2">Schiena</option>
+                        <option value="3">Spalle</option>
+                        <option value="4">Gambe</option>
+                        <option value="5">Glutei</option>
+                        <option value="6">Bicipiti</option>
+                        <option value="7">Tricipiti</option>
+                        <option value="8">Addome</option>
+                        <option value="9">Polpacci</option>
+                    </select>
+                </div>
+
+
+                <div class="button-container-next-back">
+                    <center><button type="submit" id="submitButton" style="display:none;">Invia</button></center>
+                    <button type="button" id="backButton" style="display: none;">Indietro</button>
+                    <button type="button" id="nextButton" style="display: none;">Avanti</button>
+                </div>
+
+            </form>
         </div>
-        <div class="nav-list">
-          <div class="hamburger">
-            <div class="bar"></div>
-          </div>
-          <ul>
-            <li><a href="index.html#hero" data-after="Home">Home</a></li>
-            <li><a href="index.html#services" data-after="Service">Services</a></li>
-            <li><a href="index.html#projects" data-after="Projects">Projects</a></li>
-            <li><a href="index.html#about" data-after="About">About</a></li>
-            <li><a href="index.html#contact" data-after="Contact">Contact</a></li>
-          </ul>
+
+        <div id="reportDetails" class="reportDetails" style="display: none;">
+            <div id="reportDetailsTitle" class="reportDetailsTitle"></div>
+            <div id="reportDetailsDown" class="reportDetailsDown"></div>
+            <center><button type="button" id="submitFinalButton" style="display: none;">Genera scheda di
+                    allenamento</button></center>
         </div>
-      </div>
+
+        <div id="reportTrainingProgram" class="reportTrainingProgram" style="display: none;">
+            <div id="reportTrainingProgramTitle" class="reportTrainingProgramTitle"></div>
+            <div id="reportTrainingProgramDown" class="reportTrainingProgramDown"></div>
+            <div id="reportTrainingProgramDownSplit" class="reportTrainingProgramDownSplit"></div>
+            <div id="reportTrainingProgramDownThree" class="reportTrainingProgramDownThree"></div>
+        </div>
     </div>
 
-  </section>
-
-    <div id="container" class="form-container">
-        <h1>Configurazione scheda di allenamento</h1>
-        <form id="trainingForm">
-
-            <div class="question">
-                <label for="pesiCorpoLibero">Preferisci allenarti con pesi o corpo libero?</label>
-                <select name="pesiCorpoLibero" id="pesiCorpoLibero">
-                    <option value="" disabled selected>Seleziona una risposta</option>
-                    <option value="1">Pesi</option>
-                    <option value="2">Corpo libero</option>
-                </select>
-            </div>
-
-            <div class="question">
-                <label for="obiettivo">Qual è il tuo obiettivo specifico di allenamento?</label>
-                <select name="obiettivo" id="obiettivo">
-                    <option value="" disabled selected>Seleziona una risposta</option>
-                    <option value="1">Aumento della massa muscolare</option>
-                    <option value="2">Aumento della forza</option>
-                    <option value="3">Entrambi</option>
-                </select>
-            </div>
-
-            <div class="question">
-                <label for="intensita">Come valuteresti il tuo livello di esperienza?</label>
-                <select name="intensita" id="intensita">
-                    <option value="" disabled selected>Seleziona una risposta</option>
-                    <option value="1">Principiante</option>
-                    <option value="2">Intermedio</option>
-                    <option value="3">Avanzato</option>
-                </select>
-            </div>
-
-            <div class="question">
-                <label for="genere">Indica il genere:</label>
-                <select name="genere" id="genere">
-                    <option value="" disabled selected>Seleziona una risposta</option>
-                    <option value="1">Donna</option>
-                    <option value="2">Uomo</option>
-                </select>
-            </div>
-
-            <div class="question">
-                <label for="perditaGrasso">Hai come obiettivo la perdita di grasso?</label>
-                <select name="perditaGrasso" id="perditaGrasso">
-                    <option value="" disabled selected>Seleziona una risposta</option>
-                    <option value="1">Sì</option>
-                    <option value="2">No</option>
-                </select>
-            </div>
-
-            <div class="question">
-                <label for="frequenzaAllenamento">Quante volte a settimana prevedi di allenarti?</label>
-                <select name="frequenzaAllenamento" id="frequenzaAllenamento">
-                    <option value="" disabled selected>Seleziona una risposta</option>
-                    <option value="2">2 volte</option>
-                    <option value="3">3 volte</option>
-                    <option value="4">4 volte</option>
-                    <option value="5">5 volte</option>
-                    <option value="6">6 volte</option>
-                </select>
-            </div>
-
-
-            <div class="question" id="focaliContainer1" style="display: none;">
-                <label for="areaPiuSviluppata">Qual è il tuo gruppo muscolare dominante?</label>
-                <select name="areaPiuSviluppata" id="areaPiuSviluppata">
-                    <option value="" disabled selected>Seleziona una risposta</option>
-                    <option value="1">Polpacci</option>
-                    <option value="2">Petto</option>
-                    <option value="3">Spalle</option>
-                    <option value="4">Schiena</option>
-                    <option value="5">Addome</option>
-                    <option value="6">Bicipiti</option>
-                    <option value="7">Tricipiti</option>
-                    <option value="8">Gambe</option>
-                </select>
-            </div>
-
-            <div class="question" id="focaliContainer2" style="display: none;">
-                <label for="primoGruppoMenoSviluppato">Quale gruppo muscolare vorresti focalizzare maggiormente?</label>
-                <select name="primoGruppoMenoSviluppato" id="primoGruppoMenoSviluppato">
-                    <option value="" disabled selected>Seleziona una risposta</option>
-                    <option value="1">Polpacci</option>
-                    <option value="2">Petto</option>
-                    <option value="3">Spalle</option>
-                    <option value="4">Schiena</option>
-                    <option value="5">Addome</option>
-                    <option value="6">Bicipiti</option>
-                    <option value="7">Tricipiti</option>
-                    <option value="8">Gambe</option>
-                </select>
-            </div>
-
-            <div class="question" id="sceltaSecondoGruppoID">
-                <label for="sceltaSecondoGruppo">Desideri focalizzarti su un altro gruppo muscolare?</label>
-                <select name="sceltaSecondoGruppo" id="sceltaSecondoGruppo">
-                    <option value="" disabled selected>Seleziona una risposta</option>
-                    <option value="1">Si</option>
-                    <option value="2">No</option>
-                </select>
-            </div>
-
-            <div class="question" id="focaliContainer3" style="display: none;">
-                <label for="secondoGruppoMenoSviluppato">Quale è il secondo gruppo muscolare che vorresti focalizzare
-                    maggiormente?</label>
-                <select name="secondoGruppoMenoSviluppato" id="secondoGruppoMenoSviluppato">
-                    <option value="" disabled selected>Seleziona una risposta</option>
-                    <option value="1">Polpacci</option>
-                    <option value="2">Petto</option>
-                    <option value="3">Spalle</option>
-                    <option value="4">Schiena</option>
-                    <option value="5">Addome</option>
-                    <option value="6">Bicipiti</option>
-                    <option value="7">Tricipiti</option>
-                    <option value="8">Gambe</option>
-                </select>
-            </div>
-
-            
-            <div class="button-container-next-back">
-                <center><button type="submit" id="submitButton" style="display:none;">Invia</button></center>
-                <button type="button" id="backButton" style="display: none;">Indietro</button>
-                <button type="button" id="nextButton" style="display: none;">Avanti</button>
-            </div>
-
-        </form>
-    </div>
-
-    <div id="reportDetails" class="reportDetails" style="display: none;">
-        <div id="reportDetailsTitle" class="reportDetailsTitle"></div>
-        <div id="reportDetailsDown" class="reportDetailsDown"></div>
-        <center><button type="button" id="submitFinalButton" style="display: none;">Genera scheda di
-                allenamento</button></center>
-    </div>
-
-    <div id="reportTrainingProgram" class="reportTrainingProgram" style="display: none;">
-        <div id="reportTrainingProgramTitle" class="reportTrainingProgramTitle"></div>
-        <div id="reportTrainingProgramDown" class="reportTrainingProgramDown"></div>
-        <div id="reportTrainingProgramDownTwo" class="reportTrainingProgramDownTwo"></div>
-    </div>
-
-    
     <script src="trainingForm.js"></script>
     <script src="script.js"></script>
     <script src="app.js"></script>
