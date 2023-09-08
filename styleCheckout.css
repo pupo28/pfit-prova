@@ -233,7 +233,6 @@ a {
 body.no-scroll {
   overflow: hidden;
 }
-
 /* End Header section */
 
 .all-no-headerFooter {
@@ -250,7 +249,7 @@ h1 {
   font-size: 24px;
   color: #333;
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
 }
 
 #form-container {
@@ -265,6 +264,17 @@ h1 {
 .form-group {
   margin-bottom: 20px;
   position: relative;
+}
+
+#form-container h1::after {
+  content: "";
+  display: block;
+  width: 30%;
+  height: 1px;
+  background-color: #ccc;
+  margin: 0 auto; 
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 input[type="text"],
@@ -285,6 +295,17 @@ label {
   left: 10px;
   pointer-events: none;
   transition: 0.3s;
+}
+
+.divider {
+  content: "";
+    display: block;
+    width: 100%;
+    height: 0.1px;
+    background-color: #ccc;
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 input:focus+label {
@@ -406,7 +427,7 @@ button[type="submit"]:hover {
   cursor: pointer;
   transition: background-color 0.3s;
   position: absolute;
-  top: calc(100% + 402px);
+  top: calc(100% + 432px);
   transform: translateX(0%);
 }
 
@@ -433,7 +454,7 @@ button[type="submit"]:hover {
   line-height: 24px;
   cursor: pointer;
   position: absolute;
-  top: calc(100% + 394px);
+  top: calc(100% + 424px);
   left: 0;
   right: 0;
   margin: auto;
@@ -442,7 +463,7 @@ button[type="submit"]:hover {
 
 #messaggio-codice-sconto {
   position: absolute;
-  top: calc(100% + 405px);
+  top: calc(100% + 435px);
   left: 0;
   right: 0;
   margin: auto;
@@ -493,7 +514,7 @@ button[type="submit"]:hover {
 
 #verifica-codice {
   position: absolute;
-  top: 185.4%;
+  top: 193%;
   transform: translateX(-9%);
   right: 0;
   border-radius: 5px;
@@ -508,7 +529,7 @@ button[type="submit"]:hover {
 
 #codice-sconto-label {
   position: absolute;
-  top: calc(100% + 346px);
+  top: calc(100% + 376px);
   transform: translateX(23%);
   font-size: 12px;
   color: #555;
@@ -517,12 +538,16 @@ button[type="submit"]:hover {
 
 #codice-sconto:focus+#codice-sconto-label {
   transform: translateX(28%);
-  top: 726px;
+  top: 757px;
   font-size: 10px;
   color: #0070ba;
 }
 
 @media (max-width: 425px) {
+
+  #form-container h1::after {
+    width: 60%;
+  }
 
   input[type="text"],
   input[type="email"] {
@@ -536,10 +561,10 @@ button[type="submit"]:hover {
   }
 
   #verifica-codice {
-    top: 165%;
+    top: 172.6%;
     transform: translatex(-15%);
     width: 120px;
-    height: 45px;
+    height: 46px;
   }
 
   #price-quantity p {
@@ -555,23 +580,27 @@ button[type="submit"]:hover {
   }
 
   .remove-icon {
-    top: calc(100% + 315px);
+    top: calc(100% + 345px);
     transform: translateX(10%);
   }
 
   #messaggio-codice-sconto {
-    top: calc(100% + 318px);
+    top: calc(100% + 348px);
     transform: translateX(15%);
   }
 
   .warning-icon {
-    top: calc(100% + 316px);
+    top: calc(100% + 345px);
     transform: translateX(-650%);
   }
 }
 
 @media (max-width: 1200px) and (min-width: 425px) {
 
+  #form-container h1::after {
+    width: 45%;
+  }
+  
   input[type="text"],
   input[type="email"] {
     width: 350px;
@@ -584,36 +613,36 @@ button[type="submit"]:hover {
   }
 
   #verifica-codice {
-    top: 166.5%;
+    top: 174.5%;
     transform: translateX(-13%);
     width: 140px;
-    height: 47px;
-  }
+    height: 46px;
+}
 
   #price-quantity p {
     transform: translateX(50%);
   }
 
   #codice-sconto-label {
-    top: calc(100% + 270px);
+    top: calc(100% + 300px);
   }
 
   #codice-sconto:focus+#codice-sconto-label {
-    top: 650px;
+    top: 683px;
   }
 
   .remove-icon {
-    top: calc(100% + 318px);
+    top: calc(100% + 351px);
     transform: translateX(10%);
   }
 
   #messaggio-codice-sconto {
-    top: calc(100% + 320px);
+    top: calc(100% + 353px);
     transform: translateX(12%);
   }
 
   .warning-icon {
-    top: calc(100% + 317px);
+    top: calc(100% + 351px);
     transform: translateX(-840%);
   }
 }
@@ -691,15 +720,8 @@ button[type="submit"]:hover {
   #header .nav-list ul a:after {
     display: none;
   }
-
   /* End header */
 }
-
-
-
-
-
-
 
 /* Footer */
 .footer-container {
@@ -808,3 +830,8 @@ button[type="submit"]:hover {
 }
 
 /* End Footer */
+
+
+
+
+
