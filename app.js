@@ -9,7 +9,6 @@ hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('active');
   mobile_menu.classList.toggle('active');
   body.classList.toggle('no-scroll');
-  
   // Check if the mobile menu is open or closed and set the background color accordingly
   if (mobile_menu.classList.contains('active')) {
     menuList.style.backgroundColor = '#212529';
@@ -30,7 +29,6 @@ menu_item.forEach((item) => {
     hamburger.classList.toggle('active');
     mobile_menu.classList.toggle('active');
     body.classList.remove('no-scroll');
-    
     // When a menu item is clicked and the menu is closed, set the background color to white
     if (!mobile_menu.classList.contains('active')) {
       menuList.style.backgroundColor = '#fff';
@@ -38,3 +36,9 @@ menu_item.forEach((item) => {
   });
 });
 
+body.style.overflowX = 'hidden';
+
+window.addEventListener('scroll', () => {
+  header.style.position = 'fixed';
+  header.style.top = '0';
+});
