@@ -4,6 +4,7 @@ const menu_item = document.querySelectorAll('.header .nav-bar .nav-list ul li a'
 const header = document.querySelector('#header');
 const body = document.querySelector('body');
 const menuList = document.querySelector('#header .nav-list ul');
+const menuList2 = document.querySelector('.active');
 
 hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('active');

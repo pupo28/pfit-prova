@@ -134,10 +134,6 @@ p {
 	color: #faf1a3;
 }
 
-.header.container {
-	width: 1000px
-}
-
 #header {
 	position: fixed;
 	z-index: 1000;
@@ -162,6 +158,10 @@ p {
 	max-width: 100;
 	padding: 0 10px;
 }
+
+#header .nav-list ul {
+    background-color: #212529 !important;
+  }
 
 #header .nav-list ul {
 	list-style: none;
@@ -976,7 +976,6 @@ button {
 	#hero h1 {
 		font-size: 7rem;
 	}
-
 	/* End Hero */
 
 	/* Services Section */
@@ -984,7 +983,6 @@ button {
 		flex-basis: 45%;
 		margin: 2.5%;
 	}
-
 	/* End Services Section */
 
 	/* Project */
@@ -1010,7 +1008,6 @@ button {
 	#projects .all-projects .project-img {
 		height: 100%;
 	}
-
 	/* End Project */
 
 	/* About */
@@ -1040,7 +1037,6 @@ button {
 	#about .col-right h1 {
 		text-align: left;
 	}
-
 	/* End About */
 
 	/* contact  */
@@ -1080,10 +1076,8 @@ button {
 		text-align: left;
 		padding-left: 20px;
 	}
-
 	/* End contact  */
 }
-
 /* End Media Query For Tablet */
 
 /* Media Query For Desktop */
