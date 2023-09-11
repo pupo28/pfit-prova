@@ -110,6 +110,7 @@
     var codiceScontoVero = "PFIT28"; // Codice sconto
     const percentualeSconto = 20; // Percentuale dello sconto
     let productPriceForX = productPrice;
+    var quantoTotale;
     var quantoSconto = 0;
     var messaggioCodiceSconto = document.getElementById("messaggio-codice-sconto");
     var messaggioQuantoSconto = document.getElementById("messaggio-quanto-sconto");
@@ -143,6 +144,7 @@
     window.addEventListener("resize", updateMessageStyle);
     updateMessageStyle();
     var quantoScontoSalva;
+    var quantoScontoSalvaContatore = 1;
     document.getElementById("verifica-codice").addEventListener('click', () => {
       var codiceScontoInserito = document.getElementById("codice-sconto").value;
       var codiceScontoInput = document.getElementById("codice-sconto");
@@ -160,15 +162,16 @@
           if (removeIconElement.style.display === "none") {
             productPrice = calcolaSconto(productPrice, percentualeSconto);
             updatePrice();
-            quantoSconto = (productPriceForX - productPrice).toFixed(2);
-            quantoScontoSalva = quantoSconto;
+            quantoSconto = ((productPriceForX - productPrice) * productQuantity).toFixed(2);
+              quantoScontoSalva = quantoSconto;
+              quantoScontoSalvaContatore = quantoScontoSalvaContatore +1;
+            quantoTotale = (productQuantity * productPriceForX).toFixed(2);
           }
-          messaggioQuantoSconto.textContent = "Grazie allo sconto del " + percentualeSconto + "%, hai risparmiato " + quantoSconto + "$ sul prezzo originale.";
+          messaggioQuantoSconto.textContent = "Grazie allo sconto del " + percentualeSconto + "%, hai risparmiato " + quantoSconto + "$ su " + quantoTotale + "$.";
           console.log("Prezzo finale: " + productPrice);
           removeIconElement.style.display = "block";
           warningIconElement.style.display = "none";
         } else {
-
           messaggioCodiceSconto.textContent = "Codice sconto '" + codiceScontoInserito + "' non valido!";
           messaggioCodiceSconto.style.color = "red";
           messaggioQuantoSconto.style.display = "none";
@@ -181,14 +184,6 @@
         productPrice = productPriceForX;
         updatePrice();
       }
-    });
-    decrementProductElement.addEventListener('click', () => {
-      quantoSconto = quantoScontoSalva * productQuantity;
-      messaggioQuantoSconto.textContent = "Grazie allo sconto del " + percentualeSconto + "%, hai risparmiato " + quantoSconto + "$ sul prezzo originale.";
-    });
-    incrementProductElement.addEventListener('click', () => {
-      quantoSconto = quantoScontoSalva * productQuantity;
-      messaggioQuantoSconto.textContent = "Grazie allo sconto del " + percentualeSconto + "%, hai risparmiato " + quantoSconto + "$ sul prezzo originale.";
     });
     var removeIconElement = document.getElementById("remove-icon-element");
     removeIconElement.addEventListener('click', () => {
@@ -220,6 +215,16 @@
       dynamicPrice = totalPrice;
     }
     updatePrice();
+    decrementProductElement.addEventListener('click', () => {
+      quantoSconto = ((productPriceForX - (dynamicPrice / productQuantity)) * productQuantity).toFixed(2);
+      quantoTotale = (productQuantity * productPriceForX).toFixed(2);
+      messaggioQuantoSconto.textContent = "Grazie allo sconto del " + percentualeSconto + "%, hai risparmiato " + quantoSconto + "$ su " + quantoTotale + "$.";
+    });
+    incrementProductElement.addEventListener('click', () => {
+      quantoSconto = ((productPriceForX - (dynamicPrice / productQuantity)) * productQuantity).toFixed(2);
+      quantoTotale = (productQuantity * productPriceForX).toFixed(2);
+      messaggioQuantoSconto.textContent = "Grazie allo sconto del " + percentualeSconto + "%, hai risparmiato " + quantoSconto + "$ su " + quantoTotale + "$.";
+    });
 
     // Genera key
     function generateKey(length) {

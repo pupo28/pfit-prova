@@ -98,6 +98,7 @@ a {
 }
 
 #header .nav-list ul {
+  background: #212529;
   list-style: none;
   position: absolute;
   width: 100%;
@@ -544,7 +545,6 @@ button[type="submit"]:hover {
 }
 
 @media (max-width: 425px) {
-
   #form-container h1::after {
     width: 60%;
   }
@@ -572,11 +572,11 @@ button[type="submit"]:hover {
   }
 
   #codice-sconto-label {
-    top: calc(100% + 263px);
+    top: calc(100% + 293px);
   }
 
   #codice-sconto:focus+#codice-sconto-label {
-    top: 643px;
+    top: 673px;
   }
 
   .remove-icon {
@@ -703,9 +703,7 @@ button[type="submit"]:hover {
     background-color: transparent;
   }
 
-  #header .nav-list ul {
-    background-color: #212529 !important;
-  }
+
 
   #header .nav-list ul li {
     display: inline-block;
