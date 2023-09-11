@@ -515,12 +515,12 @@ button[type="submit"]:hover {
 
 #verifica-codice {
   position: absolute;
-  top: 193%;
+  top: 193.5%;
   transform: translateX(-9%);
   right: 0;
   border-radius: 5px;
   width: 200px;
-  height: 46.5px;
+  height: 46px;
   background-color: rgba(85, 85, 85, 0.7);
   color: #fff;
   border: none;

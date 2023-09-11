@@ -1,6 +1,10 @@
 @import 'https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700&display=swap';
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
+body {
+	font-weight: 500;
+}
+
 body.no-scroll {
 	overflow: hidden;
   }
@@ -41,7 +45,7 @@ p {
 	font-size: 1.4rem;
 	margin-top: 5px;
 	line-height: 2.5rem;
-	font-weight: 300;
+	font-weight: 500;
 	letter-spacing: 0.05rem;
 }
 
@@ -581,9 +585,6 @@ button {
 		width: 350px;
 	}
 }
-::selection{
-  color: #fff;
-}
 .table .ribbon{
   width: 150px;
   height: 150px;
@@ -631,7 +632,6 @@ button {
 	flex-direction: column;
 	max-width: 1200px;
 	margin: 0 auto;
-	padding: 100px 0;
 }
 
 #projects .projects-header h1 {
@@ -664,7 +664,7 @@ button {
 	align-items: flex-start;
 	justify-content: center;
 	flex-direction: column;
-	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+	background-image: linear-gradient(60deg, #212529 50%, #fff 400%);
 	color: white;
 }
 
@@ -820,7 +820,7 @@ button {
 
 /* Footer */
 .footer-dark {
-	padding: 50px 0;
+	padding-top: 50px;
 	color: #f0f9ff;
 	background-color: #212529;
 }
@@ -915,6 +915,30 @@ button {
 	color: inherit;
 }
 
+hr.divider {
+    border-color: gray; 
+    margin: 0 auto; 
+    width: 80%; 
+    border-width: 0.1px; 
+	margin-top: 10px;
+  }
+
+  p.copyright a {
+    color: #f0f9ff; 
+    text-decoration: none; 
+  }
+
+  .footer-image {
+    width: 40px; 
+    height: auto; 
+    margin: 5px; 
+  }
+
+  .text-center {
+	padding-bottom: 10px;
+	margin-top: 10px;
+    text-align: center;
+  }
 /* End Footer */
 
 /* Keyframes */
@@ -1117,7 +1141,112 @@ button {
 
 
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
+.containerContact{
+    min-height: 100vh;
+    background: #08071d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("img/sfondoHome.jpg") no-repeat center center/cover;
+}
+
+.containerContact form{
+    width: 670px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+    border-radius: 15px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    flex-wrap: wrap;
+}
+
+.containerContact form h1{
+    color: #fff;
+    font-weight: 500;
+    margin-top: 20px;
+    width: 500px;
+    text-align: center;
+}
+
+.containerContact form input{
+    width: 290px;
+    height: 40px;
+    padding-left: 10px;
+    outline: none;
+    border: none;
+    font-size: 15px;
+    margin-bottom: 10px;
+    background: none;
+    border-bottom: 2px solid #fff;
+}
+
+.containerContact form input::placeholder{
+    color: #ddd;
+}
+
+.containerContact form #lastName,
+.containerContact form #mobile{
+    margin-left: 20px;
+}
+
+.containerContact form h4{
+    color: #fff;
+    font-weight: 300;
+    width: 600px;
+    margin-top: 20px;
+}
+
+.containerContact form textarea{
+    background: none;
+    border: none;
+    border-bottom: 2px solid #fff;
+    color: #fff;
+    font-weight: 200;
+    font-size: 15px;
+    padding: 10px;
+    outline: none;
+    min-width: 600px;
+    max-width: 600px;
+    min-height: 80px;
+    max-height: 80px;
+}
+
+textarea::-webkit-scrollbar{
+    width: 1em;
+}
+
+textarea::-webkit-scrollbar-thumb{
+    background-color: rgba(194,194,194,0.713);
+}
+
+.containerContact form #button{
+    border: none;
+    background: #fff;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #333;
+    width: 100px;
+    padding: 0;
+    margin-right: 500px;
+    margin-bottom: 30px;
+    transition: 0.3s;
+}
+
+.containerContact form #button:hover{
+    opacity: 0.7;
+}
 
   
   

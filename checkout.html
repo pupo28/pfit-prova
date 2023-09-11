@@ -163,8 +163,8 @@
             productPrice = calcolaSconto(productPrice, percentualeSconto);
             updatePrice();
             quantoSconto = ((productPriceForX - productPrice) * productQuantity).toFixed(2);
-              quantoScontoSalva = quantoSconto;
-              quantoScontoSalvaContatore = quantoScontoSalvaContatore +1;
+            quantoScontoSalva = quantoSconto;
+            quantoScontoSalvaContatore = quantoScontoSalvaContatore + 1;
             quantoTotale = (productQuantity * productPriceForX).toFixed(2);
           }
           messaggioQuantoSconto.textContent = "Grazie allo sconto del " + percentualeSconto + "%, hai risparmiato " + quantoSconto + "$ su " + quantoTotale + "$.";
@@ -194,6 +194,7 @@
       updatePrice();
       updateMessageStyle();
     });
+
     // Gestione prezzo
     var productQuantity = 1;
     var dynamicPrice = productPrice;
@@ -216,14 +217,18 @@
     }
     updatePrice();
     decrementProductElement.addEventListener('click', () => {
-      quantoSconto = ((productPriceForX - (dynamicPrice / productQuantity)) * productQuantity).toFixed(2);
-      quantoTotale = (productQuantity * productPriceForX).toFixed(2);
-      messaggioQuantoSconto.textContent = "Grazie allo sconto del " + percentualeSconto + "%, hai risparmiato " + quantoSconto + "$ su " + quantoTotale + "$.";
+      if (messaggioQuantoSconto.style.color === "green") {
+        quantoSconto = ((productPriceForX - (dynamicPrice / productQuantity)) * productQuantity).toFixed(2);
+        quantoTotale = (productQuantity * productPriceForX).toFixed(2);
+        messaggioQuantoSconto.textContent = "Grazie allo sconto del " + percentualeSconto + "%, hai risparmiato " + quantoSconto + "$ su " + quantoTotale + "$.";
+      }
     });
     incrementProductElement.addEventListener('click', () => {
-      quantoSconto = ((productPriceForX - (dynamicPrice / productQuantity)) * productQuantity).toFixed(2);
-      quantoTotale = (productQuantity * productPriceForX).toFixed(2);
-      messaggioQuantoSconto.textContent = "Grazie allo sconto del " + percentualeSconto + "%, hai risparmiato " + quantoSconto + "$ su " + quantoTotale + "$.";
+      if (messaggioQuantoSconto.style.color === "green") {
+        quantoSconto = ((productPriceForX - (dynamicPrice / productQuantity)) * productQuantity).toFixed(2);
+        quantoTotale = (productQuantity * productPriceForX).toFixed(2);
+        messaggioQuantoSconto.textContent = "Grazie allo sconto del " + percentualeSconto + "%, hai risparmiato " + quantoSconto + "$ su " + quantoTotale + "$.";
+      }
     });
 
     // Genera key
@@ -261,7 +266,6 @@
     Cordiali saluti,<br>
     PFIT
 `;
-
       Email.send({
         SecureToken: "53eda670-15e5-4d76-9d78-a2881915259e",
         To: emailValueElemnt,
