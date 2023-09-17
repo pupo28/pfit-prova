@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Altri tag head -->
+</head>
+<body>
+    <input type="text" id="inputText" placeholder="Inserisci un messaggio">
+    <button id="inviaMessaggio">Invia</button>
+    <div id="rispostaChat"></div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const inputText = document.getElementById('inputText');
+        const inviaMessaggio = document.getElementById('inviaMessaggio');
+        const rispostaChat = document.getElementById('rispostaChat');
+    
+        inviaMessaggio.addEventListener('click', function () {
+            const testoInserito = inputText.value;
+    
+            // Esegui una richiesta al tuo server
+            fetch('/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ text: testoInserito }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                const risposta = data.response;
+                rispostaChat.innerHTML += `<p>Chatbot: ${risposta}</p>`;
+                inputText.value = ''; // Cancella l'input dopo la risposta
+            })
+            .catch(error => {
+                console.error(error);
+            });
+        });
+    });
+    </script>
+</body>
+</html>

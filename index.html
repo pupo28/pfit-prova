@@ -4,6 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!----======== CSS ======== -->
+<link rel="stylesheet" href="style.css">
+
+<!-- =====Fontawesome CDN Link===== -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
   <link rel="stylesheet" href="styleIndex.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
@@ -26,10 +33,10 @@
           </div>
           <ul>
             <li><a href="#hero" data-after="Home">Home</a></li>
-            <li><a href="#services" data-after="Service">Chi Siamo</a></li>
-            <li><a href="#services" data-after="Service">Services</a></li>
-            <li><a href="#projects" data-after="Projects">Pricing</a></li>
-            <li><a href="#about" data-after="About">Reviews</a></li>
+            <li><a href="#about" data-after="Chi Siamo">Chi Siamo</a></li>
+            <li><a href="#projects" data-after="Service">Services</a></li>
+            <li><a href="#plan" data-after="Pricing">Pricing</a></li>
+            <li><a href="#review" data-after="Reviews">Reviews</a></li>
             <li><a href="#contact" data-after="Contact">Contact</a></li>
           </ul>
         </div>
@@ -161,14 +168,14 @@
   <!-- End Projects Section -->
 
   <!-- Plan Section -->
-  <section id="services">
+  <section class="plan" id="plan">
+    <div class="service-top">
+      <h1 class="section-title">I nostri <span>Piani</span></h1>
+      <p>Ora che conosci il nostro servizio, perché non lo provi subito? Clicca sul pulsante "Provalo ora!" qui sotto
+        e inizia a ricevere consigli personalizzati basati su intelligenza artificiale.</p>
+      <br>
+    </div>
     <div class="services container">
-      <div class="service-top">
-        <h1 class="section-title">I nostri <span>Piani</span></h1>
-        <p>Ora che conosci il nostro servizio, perché non lo provi subito? Clicca sul pulsante "Provalo ora!" qui sotto
-          e inizia a ricevere consigli personalizzati basati su intelligenza artificiale.</p>
-        <br>
-      </div>
       <div class="wrapper">
         <div class="table basic">
           <div class="price-section">
@@ -243,11 +250,93 @@
   </section>
   <!-- End Plan Section -->
 
+  <!-- Review Section -->
+  <section class="review" id="review">
+    <div>
+      <h1 class="section-title"><span>Rewiew</span> about us</h1>
+    </div>
+    <div class="full-boxer">
+        <div class="comment-box">
+            <div class="box-top">
+                <div class="Profile">
+                    <div class="profile-image">
+                        <img src="img/fotoProfilo.jpg">
+                    </div>
+                    <div class="Name">
+                        <strong>Maria P.</strong>
+                        <span>@Ranidi Lochana</span>
+                    </div>
+                </div>
+            </div>
+            <div class="comment">
+                <p>
+                  Sono molto soddisfatta del piano gratuito offerto da PFit. Mi ha aiutato a iniziare il mio percorso di allenamento in modo efficace. La personalizzazione avanzata è impressionante, e ora sto pensando di passare al piano premium per ottenere ulteriori vantaggi. 
+                </p>
+            </div>
+        </div>
+        <div class="comment-box">
+            <div class="box-top">
+                <div class="Profile">
+                    <div class="profile-image">
+                      <img src="img/fotoProfilo.jpg">
+                    </div>
+                    <div class="Name">
+                        <strong>John S.</strong>
+                        <span>@senuda dilwan</span>
+                    </div>
+                </div>
+            </div>
+            <div class="comment">
+                <p>
+                  Ho iniziato ad utilizzare PFit qualche mese fa, e non potrei essere più felice dei risultati che ho ottenuto. La scheda personalizzata mi ha aiutato a concentrarmi sui miei obiettivi specifici. Consiglio vivamente PFit a chiunque cerchi un compagno affidabile per il fitness.
+                </p>
+            </div>
+        </div>
+        <div class="comment-box">
+            <div class="box-top">
+                <div class="Profile">
+                    <div class="profile-image">
+                      <img src="img/fotoProfilo.jpg">
+                    </div>
+                    <div class="Name">
+                        <strong>Sarah M.</strong>
+                        <span>@Rumali fernando</span>
+                    </div>
+                </div>
+            </div>
+            <div class="comment">
+                <p>
+                  Grazie a PFit, ho raggiunto obiettivi che non avrei mai pensato fossero possibili. La combinazione di intelligenza artificiale e consulenza da parte degli esperti è un vero game changer. Non vedo l'ora di partecipare a sfide di fitness e continuare a migliorare con l'aiuto di PFit.
+                </p>
+            </div>
+        </div>
+        <div class="comment-box">
+            <div class="box-top">
+                <div class="Profile">
+                    <div class="profile-image">
+                      <img src="img/fotoProfilo.jpg">
+                    </div>
+                    <div class="Name">
+                        <strong>Carlos L.</strong>
+                        <span>@Midinu Thiranjana</span>
+                    </div>
+                </div>
+            </div>
+            <div class="comment">
+                <p>
+                  Ho sempre desiderato allenarmi a casa senza la necessità di attrezzature costose, e PFit ha reso questo sogno realtà. I programmi di allenamento sono efficaci e accessibili, e le video guide sono molto utili. PFit è diventato il mio compagno di allenamento di fiducia.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+  <!-- End Review Section -->
+
   <!-- Contact Section -->
   <section id="contact">
     <div class="contact container">
       <div>
-        <h1 class="section-title">Contact <span>info</span></h1>
+        <h1 class="section-title"><span>Contact</span></h1>
       </div>
     </div>
     <div class="containerContact">
@@ -264,6 +353,55 @@
   </div>
   </section>
   <!-- End Contact Section -->
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+      <div class="contact container">
+        <div>
+          <h1 class="section-title"><span>Faq</span></h1>
+        </div>
+      </div>
+      <div class="accordion">
+        <div class="accordion-content">
+            <header>
+                <span class="title">Come funziona l'intelligenza artificiale di PFIT nel generare schede di allenamento personalizzate?</span>
+                <i class="fa-solid fa-plus"></i>
+            </header>
+            <p class="description">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus nobis ut perspiciatis minima quidem nisi, obcaecati, delectus consequatur fuga nostrum iusto ipsam ducimus quibusdam possimus. Maiores non enim numquam voluptatem?
+            </p>
+        </div>
+        <div class="accordion-content">
+            <header>
+                <span class="title">Quali sono le opzioni di pagamento disponibili per il piano premium di PFIT?</span>
+                <i class="fa-solid fa-plus"></i>
+            </header>
+            <p class="description">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus nobis ut perspiciatis minima quidem nisi, obcaecati, delectus consequatur fuga nostrum iusto ipsam ducimus quibusdam possimus. Maiores non enim numquam voluptatem?
+            </p>
+        </div>
+        <div class="accordion-content">
+            <header>
+                <span class="title">What do you mean by Accordion?</span>
+                <i class="fa-solid fa-plus"></i>
+            </header>
+            <p class="description">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus nobis ut perspiciatis minima quidem nisi, obcaecati, delectus consequatur fuga nostrum iusto ipsam ducimus quibusdam possimus. Maiores non enim numquam voluptatem?
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto neque, sed inventore illum ut quis ducimus deleniti temporibus maiores? At nisi sed pariatur cupiditate quidem quod adipisci aut, eos quis minima voluptates non veniam ipsam quasi architecto ducimus error eum id ab, suscipit doloribus, ut accusantium consequuntur voluptate! Unde, hic sed rerum officia totam id libero officiis nihil rem sequi porro labore praesentium repudiandae a blanditiis molestias nisi beatae natus! Ea, ut voluptates, natus harum nesciunt odio hic eveniet reprehenderit veritatis, possimus tempora magni soluta eaque quidem neque maxime nostrum sapiente commodi? Earum ex cumque cupiditate dicta, tempora temporibus quaerat.
+            </p>
+        </div>
+        <div class="accordion-content">
+            <header>
+                <span class="title">What do you mean by Accordion?</span>
+                <i class="fa-solid fa-plus"></i>
+            </header>
+            <p class="description">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus nobis ut perspiciatis minima quidem nisi, obcaecati, delectus consequatur fuga nostrum iusto ipsam ducimus quibusdam possimus. Maiores non enim numquam voluptatem?
+            </p>
+        </div>
+    </div>
+    </section>
+    <!-- End FAQ Section -->
 
   <!-- Footer -->
   <div class="footer-dark">
@@ -308,6 +446,39 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
   <!-- End Footer -->
+
+  <script>
+    const accordionContent = document.querySelectorAll(".accordion-content");
+    accordionContent.forEach((item, index) => {
+      let header = item.querySelector("header");
+  
+      header.addEventListener("click", () => {
+        item.classList.toggle("open");
+  
+        if (item.classList.contains("open")) {
+          item.querySelector(".description").style.height = `${item.querySelector(".description").scrollHeight}px`;
+          item.querySelector("i").classList.replace("fa-plus", "fa-minus");
+        } else {
+          item.querySelector(".description").style.height = "0px";
+          item.querySelector("i").classList.replace("fa-minus", "fa-plus");
+        }
+  
+        removeOpen(index);
+      });
+    });
+  
+    function removeOpen(index1) {
+      accordionContent.forEach((item2, index2) => {
+        if (index1 != index2) {
+          item2.classList.remove("open");
+          item2.querySelector(".description").style.height = "0px";
+          item2.querySelector("i").classList.replace("fa-minus", "fa-plus");
+        }
+      });
+    }
+  </script>
+  
+  
   <script src="./app.js"></script>
 </body>
 
