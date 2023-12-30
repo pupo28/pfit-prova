@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+  <link rel="stylesheet" href="css/styleIndex.css">
+  <link rel="stylesheet" href="css/styleLogin.css">
+  <title>PFIT</title>
+</head>
+
+<body style="background-color: rgb(33, 37, 41);">
+  <!-- Header -->
+  <section id="header">
+    <div class="header container">
+      <div class="nav-bar">
+        <div class="brand">
+          <a href="index.html#hero">
+            <img src="img/logo.png">
+          </a>
+        </div>
+        <div class="nav-list">
+          <div class="hamburger">
+            <div class="bar"></div>
+          </div>
+          <ul>
+            <li><a href="index.html#hero" data-after="Home">Home</a></li>
+            <li><a href="index.html#about" data-after="Chi Siamo">Chi Siamo</a></li>
+            <li><a href="index.html#projects" data-after="Service">Services</a></li>
+            <li><a href="index.html#plan" data-after="Pricing">Pricing</a></li>
+            <li><a href="index.html#review" data-after="Reviews">Reviews</a></li>
+            <li><a href="index.html#contact" data-after="Contact">Contact</a></li>
+            <li>
+              <a href="checkout.html" data-after="Checkout">
+                <i class="fas fa-shopping-cart"></i>
+              </a>
+            </li>            
+            <li>
+              <a href="login.html" data-after="Log In/Sing up">
+                <i class="fas fa-user"></i></a>
+            </li>              
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+    </div>
+
+    <div class="login-container">
+      <h2>Login</h2>
+      <form action="your_login_process_page.php" method="post">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required>
+  
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+  
+          <button type="submit">Login</button>
+      </form>
+  </div>
+
+    <script src="js/app.js"></script>
+</body>

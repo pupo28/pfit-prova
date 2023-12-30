@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.login-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+}
+
+h2 {
+    color:rgb(33, 37, 41);
+    font-size: 30px;
+}
+
+label {
+    display: block;
+    margin: 0px 0 8px;
+    font-size: 14px;
+    color: rgb(33, 37, 41);
+    text-align: left;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px; 
+    box-sizing: border-box;
+    border: 1px solid rgb(33, 37, 41);
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    margin-top: 40px; 
+    transition: all 0.3s ease;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 0.5px solid rgb(33, 37, 41);
+    border-radius: 25px;
+    color: rgb(33, 37, 41);
+    height: 45px;
+    position: relative;
+    border: 1px solid rgb(33, 37, 41);
+	background: #fff;
+	color: rgb(33, 37, 41)9;
+}
+
+button:hover {
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    background: #212529;
+	color: #fff;
+}
